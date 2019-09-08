@@ -110,12 +110,12 @@ namespace ArrayTasks
         {
             var newArray = new T[array.GetLength(0), array.GetLength(1)];
 
-            for (int column = 0, newRow = 0 ; column < array.GetLength(0); column++, newRow++)
+            for (int row = 0, newColumn = 0 ; row < array.GetLength(0); row++, newColumn++)
             {
-                for (int row = 0, newColumn = array.GetLength(1) - 1;
-                    row < array.GetLength(1); row++, newColumn--)
+                for (int column = 0, newRow = array.GetLength(1) - 1;
+                    column < array.GetLength(1); column++, newRow--)
                 {
-                    newArray[newColumn, newRow] = array[column, row];
+                    newArray[newRow, newColumn] = array[row, column];
                 }
             }
 
@@ -135,11 +135,11 @@ namespace ArrayTasks
         {
             var newArray = new T[array.GetLength(0), array.GetLength(1)];
 
-            for (int column = 0, newRow = array.GetLength(0) - 1; column < array.GetLength(0); column++, newRow-- )
+            for (int row = 0, newColumn = array.GetLength(0) - 1; row < array.GetLength(0); row++, newColumn-- )
             {
-                for (int row = 0, newColumn = 0; row < array.GetLength(1); row++, newColumn++)
+                for (int column = 0, newRow = 0; column < array.GetLength(1); column++, newRow++)
                 {
-                    newArray[newColumn, newRow] = array[column, row];
+                    newArray[newRow, newColumn] = array[row, column];
                 }
             }
 
